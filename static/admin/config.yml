@@ -2,6 +2,7 @@ backend:
   name: github
   branch: main 
   repo: davechekan/docu-site
+  squash_merges: true
 
 # These lines should *not* be indented
 media_folder: "static/img" # Media files will be stored in the repo under static/images/uploads
@@ -33,12 +34,31 @@ collections:
         - { name: url, label: URL, widget: string } 
         - { name: imageUrl, label: ImageURL, widget: string } 
 - name: docs
-  label: "docs"
+  label: "next version docs"
   folder: docs
   path: '{{section}}/{{slug}}'
   create: true
   extension: md
   identifier_field: sidebar_label
+  nested:
+    depth: 100
+    summary: '{{title}}'
+  fields:
+    - { name: sidebar_label, label: Title, widget: string } 
+    - { name: sidebar_position, label: Sidebar Position, widget: number }
+    - { name: section, label: Section, widget: string}
+    - { name: body, label: Body, widget: markdown }
+
+- name: versioned_docs
+  label: "current versioned docs"
+  folder: versioned_docs
+  path: '{{section}}/{{slug}}'
+  create: true
+  extension: md
+  identifier_field: sidebar_label
+  nested:
+    depth: 100
+    summary: '{{title}}'
   fields:
     - { name: sidebar_label, label: Title, widget: string } 
     - { name: sidebar_position, label: Sidebar Position, widget: number }
