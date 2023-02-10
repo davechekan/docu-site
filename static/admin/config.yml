@@ -35,10 +35,12 @@ collections:
 - name: docs
   label: "docs"
   folder: docs
+  path: '{{section}}/{{slug}}'
   create: true
   extension: md
-  identifier_field: title
+  identifier_field: sidebar_label
   fields:
     - { name: sidebar_label, label: Title, widget: string } 
     - { name: sidebar_position, label: Sidebar Position, widget: number }
+    - { name: section, label: Section, widget: string}
     - { name: body, label: Body, widget: markdown }
