@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: "Dave's Great Site",
+  tagline: 'Documents are cool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -64,7 +64,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Doc Site',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -74,11 +74,15 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Policy',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Announcements ', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            type: 'docsVersionDropdown',
+            position: 'right'
+          },
+          {
+            href: 'https://github.com/davechekan/docu-site',
             label: 'GitHub',
             position: 'right',
           },
@@ -91,7 +95,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Policy',
                 to: '/docs/intro',
               },
             ],
@@ -122,7 +126,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/davechekan/docu-site',
               },
             ],
           },
